@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+    <div class="container material-padding-vertical">
+        {% for post in posts %}
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{post.Title}}
+                    </h5>
+                    <p class="card-text">
+                        {{post.Post_Summary}}
+                    </p>
+                    <a href="{% url 'blog:post' pk=post.pk %}">Read More</a>
+                </div>
+            </div>
+        </div>
+       {% endfor %}
+    </div>
+{% endblock %}
